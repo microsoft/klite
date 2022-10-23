@@ -1,0 +1,1551 @@
+{
+ "zymurgy": [
+  {
+   "pos": "noun",
+   "heads": [
+    {
+     "template_name": "en-noun"
+    }
+   ],
+   "forms": [
+    {
+     "form": "zymurgies",
+     "tags": [
+      "plural"
+     ]
+    }
+   ],
+   "word": "zymurgy",
+   "lang_code": "en",
+   "senses": [
+    {
+     "glosses": [
+      "The chemistry of fermentation with yeasts, especially the science involved in beer and winemaking."
+     ],
+     "derived": [
+      {
+       "word": "zymurgic"
+      },
+      {
+       "word": "zymurgical"
+      },
+      {
+       "word": "zymurgist"
+      }
+     ],
+     "related": [
+      {
+       "word": "zythepsary"
+      }
+     ],
+     "categories": [
+      "Beer",
+      "Zymurgy"
+     ],
+     "id": "zymurgy-noun"
+    }
+   ]
+  }
+ ],
+ "orient": [
+  {
+   "pos": "name",
+   "heads": [
+    {
+     "template_name": "en-proper noun"
+    }
+   ],
+   "wikipedia": [
+    "Aci Castello",
+    "Willem Blaeu"
+   ],
+   "categories": [
+    "American English"
+   ],
+   "word": "orient",
+   "lang_code": "en",
+   "hyphenation": [
+    "or\u2027i\u2027ent"
+   ],
+   "senses": [
+    {
+     "antonyms": [
+      {
+       "word": "occident"
+      }
+     ],
+     "glosses": [
+      "Usually preceded by the: alternative letter-case form of Orient (\u201ca region or a part of the world to the east of a certain place; countries of Asia, the East (especially East Asia)\u201d)"
+     ],
+     "id": "orient-name"
+    }
+   ]
+  },
+  {
+   "pos": "noun",
+   "heads": [
+    {
+     "template_name": "en-noun"
+    }
+   ],
+   "forms": [
+    {
+     "form": "orients",
+     "tags": [
+      "plural"
+     ]
+    }
+   ],
+   "wikipedia": [
+    "Aci Castello",
+    "Willem Blaeu"
+   ],
+   "categories": [
+    "American English"
+   ],
+   "word": "orient",
+   "lang_code": "en",
+   "hyphenation": [
+    "or\u2027i\u2027ent"
+   ],
+   "senses": [
+    {
+     "glosses": [
+      "The part of the horizon where the sun first appears in the morning; the east."
+     ],
+     "id": "orient-noun-6ToJ6EnP"
+    },
+    {
+     "tags": [
+      "obsolete"
+     ],
+     "glosses": [
+      "A pearl originating from the Indian region, reputed to be of great brilliance; (by extension) any pearl of particular beauty and value."
+     ],
+     "id": "orient-noun-fiWMe6hF"
+    },
+    {
+     "tags": [
+      "broadly"
+     ],
+     "glosses": [
+      "The brilliance or colour of a high-quality pearl."
+     ],
+     "id": "orient-noun-XF9v4xMr"
+    }
+   ]
+  },
+  {
+   "pos": "adj",
+   "heads": [
+    {
+     "1": "-",
+     "template_name": "en-adj"
+    }
+   ],
+   "wikipedia": [
+    "Aci Castello",
+    "Willem Blaeu"
+   ],
+   "categories": [
+    "American English"
+   ],
+   "word": "orient",
+   "lang_code": "en",
+   "hyphenation": [
+    "or\u2027i\u2027ent"
+   ],
+   "senses": [
+    {
+     "tags": [
+      "also",
+      "dated",
+      "figuratively",
+      "not-comparable",
+      "poetic"
+     ],
+     "glosses": [
+      "Rising, like the morning sun."
+     ],
+     "id": "orient-adj-wOgndNW5"
+    },
+    {
+     "synonyms": [
+      {
+       "word": "Orient red"
+      }
+     ],
+     "tags": [
+      "dated",
+      "not-comparable",
+      "poetic"
+     ],
+     "glosses": [
+      "Of the colour of the sky at daybreak; bright red."
+     ],
+     "id": "orient-adj-8GTTAffP"
+    },
+    {
+     "antonyms": [
+      {
+       "word": "occidental"
+      }
+     ],
+     "english": "obsolete except poetic",
+     "tags": [
+      "not-comparable"
+     ],
+     "glosses": [
+      "Of, facing, or located in the east; eastern, oriental."
+     ],
+     "id": "orient-adj-MieM7dsg"
+    },
+    {
+     "synonyms": [
+      {
+       "word": "shining"
+      }
+     ],
+     "english": "obsolete except poetic",
+     "tags": [
+      "not-comparable"
+     ],
+     "glosses": [
+      "Of a pearl or other gem: of great brilliance and value; (by extension) bright, lustrous."
+     ],
+     "id": "orient-adj-fBrpizLg"
+    }
+   ]
+  },
+  {
+   "pos": "verb",
+   "heads": [
+    {
+     "template_name": "en-verb"
+    }
+   ],
+   "categories": [
+    "American English"
+   ],
+   "forms": [
+    {
+     "form": "orients",
+     "tags": [
+      "present",
+      "simple",
+      "singular",
+      "third-person"
+     ]
+    },
+    {
+     "form": "orienting",
+     "tags": [
+      "participle",
+      "present"
+     ]
+    },
+    {
+     "form": "oriented",
+     "tags": [
+      "participle",
+      "past"
+     ]
+    },
+    {
+     "form": "oriented",
+     "tags": [
+      "past",
+      "simple"
+     ]
+    },
+    {
+     "form": "US",
+     "tags": [
+      "commonly",
+      "error-unknown-tag"
+     ]
+    }
+   ],
+   "wikipedia": [
+    "Aci Castello",
+    "Willem Blaeu"
+   ],
+   "word": "orient",
+   "lang_code": "en",
+   "hyphenation": [
+    "or\u2027i\u2027ent"
+   ],
+   "derived": [
+    {
+     "word": "disorient"
+    },
+    {
+     "word": "disorientate"
+    },
+    {
+     "word": "nonorientable"
+    },
+    {
+     "word": "nonoriented"
+    },
+    {
+     "word": "orientable"
+    },
+    {
+     "word": "orientate"
+    },
+    {
+     "tags": [
+      "adjective"
+     ],
+     "word": "orientating"
+    },
+    {
+     "word": "orientation"
+    },
+    {
+     "tags": [
+      "adjective"
+     ],
+     "word": "oriented"
+    },
+    {
+     "word": "orientee"
+    },
+    {
+     "word": "reorient"
+    },
+    {
+     "word": "reorientate"
+    },
+    {
+     "word": "reorientation"
+    },
+    {
+     "word": "unorientable"
+    },
+    {
+     "word": "unoriented"
+    }
+   ],
+   "related": [
+    {
+     "word": "orientalism"
+    },
+    {
+     "word": "orientalist"
+    },
+    {
+     "word": "oriental"
+    },
+    {
+     "word": "Oriental"
+    },
+    {
+     "word": "orienteer"
+    },
+    {
+     "word": "orienteering"
+    },
+    {
+     "word": "origin"
+    }
+   ],
+   "senses": [
+    {
+     "tags": [
+      "transitive"
+     ],
+     "glosses": [
+      "To build or place (something) so as to face eastward."
+     ],
+     "id": "orient-verb-L-HX9rIu"
+    },
+    {
+     "synonyms": [
+      {
+       "word": "orientate"
+      }
+     ],
+     "categories": [
+      "Surveying"
+     ],
+     "tags": [
+      "broadly",
+      "transitive"
+     ],
+     "glosses": [
+      "To align or place (a person or object) so that his, her, or its east side, north side, etc., is positioned toward the corresponding points of the compass; (specifically, surveying) to rotate (a map attached to a plane table) until the line of direction between any two of its points is parallel to the corresponding direction in nature."
+     ],
+     "id": "orient-verb-7ucCuheB"
+    },
+    {
+     "synonyms": [
+      {
+       "word": "orientate"
+      }
+     ],
+     "tags": [
+      "transitive"
+     ],
+     "glosses": [
+      "To direct towards or point at a particular direction."
+     ],
+     "translations": [
+      {
+       "lang": "Bulgarian",
+       "code": "bg",
+       "sense": "to direct towards or point at a particular direction",
+       "roman": "orientiram",
+       "word": "\u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u0430\u043c"
+      },
+      {
+       "lang": "Italian",
+       "code": "it",
+       "sense": "to direct towards or point at a particular direction",
+       "word": "orientare"
+      },
+      {
+       "lang": "Maori",
+       "code": "mi",
+       "sense": "to direct towards or point at a particular direction",
+       "word": "whakaanga"
+      }
+     ],
+     "id": "orient-verb-5-ysQIVT"
+    },
+    {
+     "tags": [
+      "reflexive",
+      "transitive"
+     ],
+     "glosses": [
+      "To determine which direction one is facing."
+     ],
+     "id": "orient-verb-1HfmKO9X"
+    },
+    {
+     "synonyms": [
+      {
+       "word": "orientate"
+      }
+     ],
+     "antonyms": [
+      {
+       "word": "disorient"
+      },
+      {
+       "word": "disorientate"
+      }
+     ],
+     "tags": [
+      "figuratively",
+      "often",
+      "reflexive",
+      "transitive"
+     ],
+     "glosses": [
+      "To familiarize (oneself or someone) with a circumstance or situation."
+     ],
+     "id": "orient-verb-MkasPnKC"
+    },
+    {
+     "tags": [
+      "figuratively",
+      "transitive"
+     ],
+     "glosses": [
+      "To set the focus of (something) so as to appeal or relate to a certain group."
+     ],
+     "translations": [
+      {
+       "lang": "Czech",
+       "code": "cs",
+       "sense": "to set the focus of (something) so as to appeal or relate to a certain group",
+       "word": "orientovat"
+      },
+      {
+       "lang": "Portuguese",
+       "code": "pt",
+       "sense": "to set the focus of (something) so as to appeal or relate to a certain group",
+       "word": "orientar"
+      },
+      {
+       "lang": "Russian",
+       "code": "ru",
+       "sense": "to set the focus of (something) so as to appeal or relate to a certain group",
+       "roman": "orijent\u00edrovat\u02b9",
+       "tags": [
+        "imperfective"
+       ],
+       "word": "\u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0301\u0440\u043e\u0432\u0430\u0442\u044c"
+      },
+      {
+       "lang": "Russian",
+       "code": "ru",
+       "sense": "to set the focus of (something) so as to appeal or relate to a certain group",
+       "roman": "sorijent\u00edrovat\u02b9",
+       "tags": [
+        "perfective"
+       ],
+       "word": "\u0441\u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0301\u0440\u043e\u0432\u0430\u0442\u044c"
+      }
+     ],
+     "id": "orient-verb-pGopmqyL"
+    },
+    {
+     "tags": [
+      "intransitive"
+     ],
+     "glosses": [
+      "To change direction to face a certain way."
+     ],
+     "id": "orient-verb-fHKH3OcI"
+    }
+   ]
+  }
+ ],
+ "leafs": [
+  {
+   "pos": "verb",
+   "heads": [
+    {
+     "1": "en",
+     "2": "verb form",
+     "template_name": "head"
+    }
+   ],
+   "word": "leafs",
+   "lang_code": "en",
+   "senses": [
+    {
+     "glosses": [
+      "Third-person singular simple present indicative form of leaf"
+     ],
+     "tags": [
+      "form-of",
+      "indicative",
+      "present",
+      "simple",
+      "singular",
+      "third-person"
+     ],
+     "form_of": [
+      {
+       "word": "leaf"
+      }
+     ],
+     "id": "leafs-verb"
+    }
+   ]
+  },
+  {
+   "pos": "noun",
+   "heads": [
+    {
+     "1": "en",
+     "2": "noun form",
+     "template_name": "head"
+    }
+   ],
+   "word": "leafs",
+   "lang_code": "en",
+   "senses": [
+    {
+     "tags": [
+      "form-of",
+      "nonstandard",
+      "plural"
+     ],
+     "glosses": [
+      "plural of leaf"
+     ],
+     "form_of": [
+      {
+       "word": "leaf"
+      }
+     ],
+     "id": "leafs-noun"
+    }
+   ]
+  }
+ ],
+ "leaves": [
+  {
+   "pos": "noun",
+   "heads": [
+    {
+     "1": "en",
+     "2": "noun form",
+     "template_name": "head"
+    }
+   ],
+   "categories": [
+    "English irregular plurals ending in \"-ves\""
+   ],
+   "word": "leaves",
+   "lang_code": "en",
+   "senses": [
+    {
+     "glosses": [
+      "plural of leaf"
+     ],
+     "tags": [
+      "form-of",
+      "plural"
+     ],
+     "form_of": [
+      {
+       "word": "leaf"
+      }
+     ],
+     "id": "leaves-noun-Gvup9yqN"
+    },
+    {
+     "glosses": [
+      "plural of leave"
+     ],
+     "tags": [
+      "form-of",
+      "plural"
+     ],
+     "form_of": [
+      {
+       "word": "leave"
+      }
+     ],
+     "id": "leaves-noun-ufgTSxFJ"
+    }
+   ]
+  },
+  {
+   "pos": "verb",
+   "heads": [
+    {
+     "1": "en",
+     "2": "verb form",
+     "template_name": "head"
+    }
+   ],
+   "categories": [
+    "English irregular plurals ending in \"-ves\""
+   ],
+   "word": "leaves",
+   "lang_code": "en",
+   "senses": [
+    {
+     "glosses": [
+      "Third-person singular simple present indicative form of leave"
+     ],
+     "tags": [
+      "form-of",
+      "indicative",
+      "present",
+      "simple",
+      "singular",
+      "third-person"
+     ],
+     "form_of": [
+      {
+       "word": "leave"
+      }
+     ],
+     "id": "leaves-verb"
+    }
+   ]
+  }
+ ],
+ "milton": [
+  {
+   "pos": "name",
+   "heads": [
+    {
+     "template_name": "en-proper noun"
+    }
+   ],
+   "categories": [
+    "Individuals"
+   ],
+   "word": "Milton",
+   "lang_code": "en",
+   "derived": [
+    {
+     "word": "Milton Keynes"
+    },
+    {
+     "word": "New Milton"
+    }
+   ],
+   "senses": [
+    {
+     "categories": [
+      "Civil parishes of England",
+      "Places in Cambridgeshire, England",
+      "Places in England",
+      "Villages in Cambridgeshire, England",
+      "Villages in England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A village and civil parish in South Cambridgeshire district, Cambridgeshire (OS grid ref TL4762)."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-HjJoXwpb"
+    },
+    {
+     "categories": [
+      "Places in Cumbria, England",
+      "Places in England",
+      "Villages in Cumbria, England",
+      "Villages in England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A hamlet in Carlisle district, Cumbria (OS grid ref NY5560)."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-7OSnRD0C"
+    },
+    {
+     "categories": [
+      "Places in Cumbria, England",
+      "Places in England",
+      "Villages in Cumbria, England",
+      "Villages in England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A hamlet in South Lakeland district, Cumbria (OS grid ref SD5383)."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-v1I3ibhF"
+    },
+    {
+     "categories": [
+      "Places in Derbyshire, England",
+      "Places in England",
+      "Villages in Derbyshire, England",
+      "Villages in England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A hamlet in Derbyshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-OnGeprUD"
+    },
+    {
+     "categories": [
+      "Neighbourhoods in Hampshire, England",
+      "Places in England",
+      "Places in Hampshire, England",
+      "Places in Portsmouth"
+     ],
+     "glosses": [
+      "A place in England:",
+      "An area of Portsmouth, Hampshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-dqxtEG7o"
+    },
+    {
+     "categories": [
+      "Places in England",
+      "Places in Nottinghamshire, England",
+      "Villages in England",
+      "Villages in Nottinghamshire, England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A village in West Markham parish, Bassetlaw district, Nottinghamshire (OS grid ref SK7173)."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-W8wvOkiQ"
+    },
+    {
+     "categories": [
+      "Places in England",
+      "Places in Oxfordshire, England",
+      "Villages in England",
+      "Villages in Oxfordshire, England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A village in Cherwell district, Oxfordshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-V0M963-f"
+    },
+    {
+     "categories": [
+      "Places in England",
+      "Places in Oxfordshire, England",
+      "Villages in England",
+      "Villages in Oxfordshire, England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A village in Vale of White Horse district, Oxfordshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-gP0.vYKZ"
+    },
+    {
+     "categories": [
+      "Places in England",
+      "Places in Somerset, England",
+      "Villages in England",
+      "Villages in Somerset, England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A hamlet in Somerset."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-kHuF3mcY"
+    },
+    {
+     "categories": [
+      "Places in England",
+      "Places in Staffordshire, England",
+      "Villages in England",
+      "Villages in Staffordshire, England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A village in Staffordshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-7tjPe4Me"
+    },
+    {
+     "categories": [
+      "Places in England",
+      "Places in Wiltshire, England",
+      "Villages in England",
+      "Villages in Wiltshire, England"
+     ],
+     "glosses": [
+      "A place in England:",
+      "A hamlet in Wiltshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-CqJn6n3T"
+    },
+    {
+     "categories": [
+      "Places in Scotland",
+      "Villages"
+     ],
+     "glosses": [
+      "A place in Scotland:",
+      "A village in Ross and Cromarty."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-L3bIX6X3"
+    },
+    {
+     "categories": [
+      "Places in Scotland",
+      "Villages"
+     ],
+     "glosses": [
+      "A place in Scotland:",
+      "A village in Inverness-shire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-yQN7Buj0"
+    },
+    {
+     "categories": [
+      "Places in Glasgow",
+      "Places in Scotland",
+      "Places in the City of Glasgow, Scotland"
+     ],
+     "glosses": [
+      "A place in Scotland:",
+      "A district of Glasgow, Lanarkshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-vsIewc2n"
+    },
+    {
+     "categories": [
+      "Places in Scotland",
+      "Villages"
+     ],
+     "glosses": [
+      "A place in Scotland:",
+      "A hamlet in Stirlingshire."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-t-YNz2hd"
+    },
+    {
+     "categories": [
+      "Places in Scotland",
+      "Places in West Dunbartonshire, Scotland",
+      "Villages in Scotland",
+      "Villages in West Dunbartonshire, Scotland"
+     ],
+     "glosses": [
+      "A place in Scotland:",
+      "A village in West Dunbartonshire council area (OS grid ref NS4274)."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-8Fz436aC"
+    },
+    {
+     "categories": [
+      "Places in Scotland",
+      "Villages"
+     ],
+     "glosses": [
+      "A place in Scotland:",
+      "A settlement in the Outer Hebrides."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-wwoZcMLL"
+    },
+    {
+     "categories": [
+      "English surnames"
+     ],
+     "glosses": [
+      "A habitational surname, from Old English\u200b, from the multiple places in Britain named \"Milton\"."
+     ],
+     "id": "Milton-name-yCS73oHE"
+    },
+    {
+     "categories": [
+      "English given names",
+      "English male given names"
+     ],
+     "tags": [
+      "masculine"
+     ],
+     "glosses": [
+      "A male given name transferred from the surname."
+     ],
+     "id": "Milton-name-Vj3AlNl-"
+    },
+    {
+     "glosses": [
+      "John Milton, an English author and poet of the seventeenth century."
+     ],
+     "id": "Milton-name-CgJ0RfuV"
+    },
+    {
+     "glosses": [
+      "John Milton's works or media adaptations of his works."
+     ],
+     "id": "Milton-name-MeXVpO2b"
+    },
+    {
+     "categories": [
+      "Places in Australia",
+      "Places in Queensland",
+      "Suburbs in Queensland"
+     ],
+     "glosses": [
+      "A place in Australia.",
+      "A suburb of Brisbane, Queensland; named for nearby Milton Farm, itself for poet John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-C1AcCj3D"
+    },
+    {
+     "categories": [
+      "Places in Australia",
+      "Places in New South Wales",
+      "Towns in Australia",
+      "Towns in New South Wales"
+     ],
+     "glosses": [
+      "A place in Australia.",
+      "A town in New South Wales."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-oVI1QTXq"
+    },
+    {
+     "categories": [
+      "Places in Canada",
+      "Places in Ontario",
+      "Towns in Canada",
+      "Towns in Ontario"
+     ],
+     "glosses": [
+      "A place in Canada.",
+      "A town in Ontario; named for poet John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-yXI-Xn3q"
+    },
+    {
+     "categories": [
+      "Places in Canada",
+      "Places in Nova Scotia",
+      "Villages in Canada",
+      "Villages in Nova Scotia"
+     ],
+     "glosses": [
+      "A place in Canada.",
+      "A village in Nova Scotia."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-9zvYIqIF"
+    },
+    {
+     "categories": [
+      "Places in Canada",
+      "Places in Newfoundland and Labrador",
+      "Villages in Canada",
+      "Villages in Newfoundland and Labrador"
+     ],
+     "glosses": [
+      "A place in Canada.",
+      "A former logging village in Newfoundland and Labrador; named for poet John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-OV5hLjmp"
+    },
+    {
+     "categories": [
+      "Places in New Zealand",
+      "Towns in New Zealand"
+     ],
+     "tags": [
+      "place"
+     ],
+     "glosses": [
+      "A town in Otago, New Zealand."
+     ],
+     "id": "Milton-name-Czgq5JkQ"
+    },
+    {
+     "categories": [
+      "Cities in Georgia, USA",
+      "Cities in the United States",
+      "Places in Georgia, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A city in Georgia, a suburb of Atlanta; named for Revolutionary War officer John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-MLEFpnDV"
+    },
+    {
+     "categories": [
+      "Places in Massachusetts, USA",
+      "Places in the United States",
+      "Towns in Massachusetts, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in Massachusetts; named for Milton Abbey in Dorset, England."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-.m4m.ncc"
+    },
+    {
+     "categories": [
+      "Places in New York, USA",
+      "Places in the United States",
+      "Towns in New York, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in Saratoga County, New York; named for either poet John Milton or a mill in the area."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-esDqcx9t"
+    },
+    {
+     "categories": [
+      "Places in Vermont, USA",
+      "Places in the United States",
+      "Towns in Vermont, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in Vermont, a suburb of Burlington; named for British statesman William Fitzwilliam, Viscount Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-.ch0Z5y2"
+    },
+    {
+     "categories": [
+      "Cities in Florida, USA",
+      "Cities in the United States",
+      "County seats of Florida, USA",
+      "Places in Florida, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A city, the county seat of Santa Rosa County, Florida; perhaps named for poet John Milton, or for the local lumber mill industry."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-DlcQ6pJa"
+    },
+    {
+     "categories": [
+      "Cities in Washington, USA",
+      "Cities in the United States",
+      "Places in Washington, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A city in Washington."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-K1NQfR-E"
+    },
+    {
+     "categories": [
+      "Boroughs in Pennsylvania, USA",
+      "Places in Pennsylvania, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A borough of Pennsylvania."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-aHjsMJvW"
+    },
+    {
+     "categories": [
+      "Places in Delaware, USA",
+      "Places in the United States",
+      "Towns in Delaware, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in Delaware; named for poet John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-FyDrevrn"
+    },
+    {
+     "categories": [
+      "Places in Wisconsin, USA",
+      "Places in the United States",
+      "Towns in Wisconsin, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in Rock County, Wisconsin; named for poet John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-d1O9fKtr"
+    },
+    {
+     "categories": [
+      "Places in West Virginia, USA",
+      "Places in the United States",
+      "Towns in West Virginia, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in West Virginia; named for landowner Milton Reece."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-NcEBlhvy"
+    },
+    {
+     "categories": [
+      "Places in New York, USA",
+      "Places in the United States",
+      "Villages in New York, USA",
+      "Villages in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A hamlet in Ulster County, New York; named for poet John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-b7MVkHD1"
+    },
+    {
+     "categories": [
+      "Places in New Hampshire, USA",
+      "Places in the United States",
+      "Towns in New Hampshire, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in New Hampshire; named for either a mill in the area or for the Viscount Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-X-1luKJc"
+    },
+    {
+     "categories": [
+      "Cities in Kentucky, USA",
+      "Cities in the United States",
+      "Places in Kentucky, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A city in Kentucky."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-HBBOH70S"
+    },
+    {
+     "categories": [
+      "Cities in Wisconsin, USA",
+      "Cities in the United States",
+      "Places in Wisconsin, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A city in Rock County, Wisconsin; named for poet John Milton."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-ZTwp-4a1"
+    },
+    {
+     "categories": [
+      "Places in Wisconsin, USA",
+      "Places in the United States",
+      "Towns in Wisconsin, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in Buffalo County, Wisconsin."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-xGn3GEF7"
+    },
+    {
+     "categories": [
+      "Places in Indiana, USA",
+      "Places in the United States",
+      "Towns in Indiana, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in Wayne County, Indiana; named for the watermills in the area."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-V8NKT4Hf"
+    },
+    {
+     "categories": [
+      "Cities in Iowa, USA",
+      "Cities in the United States",
+      "Places in Iowa, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A city in Iowa; named for the town in Delaware."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-CZUe9gzJ"
+    },
+    {
+     "categories": [
+      "Places in Illinois, USA",
+      "Places in the United States",
+      "Villages in Illinois, USA",
+      "Villages in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A village in Illinois."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-EHzqWKNg"
+    },
+    {
+     "categories": [
+      "Places in North Carolina, USA",
+      "Places in the United States",
+      "Towns in North Carolina, USA",
+      "Towns in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A town in North Carolina; named for a mill in the area."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-nKQhQ8LZ"
+    },
+    {
+     "categories": [
+      "Places in Maine, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unorganized territory in Maine."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-89zWM7jj"
+    },
+    {
+     "categories": [
+      "Cities in North Dakota, USA",
+      "Cities in the United States",
+      "Places in North Dakota, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A city in North Dakota."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-KN8YjbpP"
+    },
+    {
+     "categories": [
+      "Neighborhoods in Missouri, USA",
+      "Places in Kansas City",
+      "Places in Missouri, USA",
+      "Places in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "A neighborhood of Kansas City, Missouri; named for the landowning Milton family."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-7w4rYPha"
+    },
+    {
+     "categories": [
+      "Places in California, USA",
+      "Places in the United States",
+      "Unincorporated communities in California, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in California; named for railroad engineer Milton Latham."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-YfzWOMq4"
+    },
+    {
+     "categories": [
+      "Places in Indiana, USA",
+      "Places in the United States",
+      "Unincorporated communities in Indiana, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in Ohio County, Indiana; named for the gristmill and sawmill in the area."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-ZzPvdxX."
+    },
+    {
+     "categories": [
+      "Places in Kansas, USA",
+      "Places in the United States",
+      "Unincorporated communities in Kansas, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in Kansas."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-l2J-RrQE"
+    },
+    {
+     "categories": [
+      "Places in Louisiana, USA",
+      "Places in the United States",
+      "Unincorporated communities in Louisiana, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in Louisiana; named for early resident Dr. Milton R. Cushman and his son, Milton S. Cushman."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-knaPv-zW"
+    },
+    {
+     "categories": [
+      "Places in Missouri, USA",
+      "Places in the United States",
+      "Unincorporated communities in Missouri, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in Atchison County, Missouri."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-h5g8ZEKp"
+    },
+    {
+     "categories": [
+      "Places in Missouri, USA",
+      "Places in the United States",
+      "Unincorporated communities in Missouri, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in Randolph County, Missouri; named for the town in North Carolina."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-UQTKQXwa"
+    },
+    {
+     "categories": [
+      "Places in Tennessee, USA",
+      "Places in the United States",
+      "Unincorporated communities in Tennessee, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in Tennessee."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-Wzr7LuzS"
+    },
+    {
+     "categories": [
+      "Places in Texas, USA",
+      "Places in the United States",
+      "Unincorporated communities in Texas, USA",
+      "Unincorporated communities in the United States"
+     ],
+     "glosses": [
+      "A place in the United States.",
+      "An unincorporated community in Texas."
+     ],
+     "tags": [
+      "place"
+     ],
+     "id": "Milton-name-J7zVGBgB"
+    }
+   ]
+  }
+ ]
+}

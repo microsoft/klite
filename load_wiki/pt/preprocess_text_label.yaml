@@ -1,0 +1,110 @@
+description: r50
+
+# target:
+#   vc: hcrr08 # msrhyper
+#   service: amlk8s
+#   name: itphyperdgx2cl2
+
+
+# environment:
+#   registry: docker.io
+#   image: amsword/setup:py36pt17u18cu11
+#   # image: pengchuanzhang/pytorch:ubuntu20.04_torch1.9-cuda11.3-nccl2.9.9
+#   # image: pengchuanzhang/maskrcnn:ubuntu18-py3.7-cuda10.1-pytorch1.7
+#   # registry: amlitpcloudreg.azurecr.io
+#   # # # image: pytorch:ubuntu18.04_torch1.7-cuda11.0-nccl_bootstrap_tag
+#   # image: pytorch:ubuntu20.04_torch1.9-cuda11.3-nccl2.9.9
+
+# target:
+#   service: amlk8s
+#   vc: TuringMM # hai1
+#   name: a100-8x-cus # ms-shared-v100
+
+
+target:
+  service: amlk8s
+  vc: resrchvc # hai1
+  # name: itpeusp100cl #itpeusp100cl # ms-shared-v100
+  name: itpeusp40cl # ms-shared-v100
+
+
+environment:
+  registry: docker.io
+  image: amsword/setup:py36pt17u18cu11
+
+code:
+  local_dir: ./
+
+storage:
+
+  dataset_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+  output_storage:
+    storage_account_name: shengdb
+    container_name: output 
+  # dataset_chunylcus_storage:
+  #   storage_account_name: chunylcus
+  #   container_name: datasets
+
+search:
+  job_template:
+    # name: prorcess_cc3m_start_idx{start_idx}_process_lines{process_lines}
+    name: prorcess_{data_path}_start_idx{start_idx}_process_lines{process_lines}
+    sku: G1 # G16
+    command:
+    # - ulimit -n 4096
+    - pip install spacy --user
+    - pip install nltk --user
+    - pip install numpy --user 
+    - pip install tqdm --user 
+    - pip install glob --user 
+    - python -m spacy download en_core_web_sm
+    - python -c 'import nltk; nltk.download("punkt")'
+    - python -c 'import nltk; nltk.download("wordnet"); nltk.download("omw-1.4")'
+    - python build_dataset.py --data_path {data_path} --output_dir {output_dir} --start_idx {start_idx} --process_lines {process_lines} --image_label 1
+
+    submit_args:
+      max_attempts: 5
+      container_args:
+        shm_size: 64G       
+  max_trials: 100
+  type: grid          
+  params:
+    # - name: output_dir
+    #   spec: discrete
+    #   values: [/mnt/output_storage/data/cc3m_bin_process/] # ['1x', '2x']
+    # - name: data_path
+    #   spec: discrete
+    #   values: [/mnt/dataset_storage/cc3m_bin/text-01.tsv]
+    # - name: data_path
+    #   spec: discrete
+    #   values: [/mnt/dataset_storage/cc3m_bin/text-00.tsv, /mnt/dataset_storage/cc3m_bin/text-01.tsv]
+    # - name: output_dir
+    #   spec: discrete
+    #   values: [/mnt/output_storage/data/cc12m_bin_process/] # ['1x', '2x']
+    # - name: data_path
+    #   spec: discrete
+    #   values: [/mnt/dataset_storage/cc12m_bin/text-09.tsv] # [/mnt/dataset_storage/cc12m_bin/text-00.tsv, /mnt/dataset_storage/cc12m_bin/text-01.tsv, /mnt/dataset_storage/cc12m_bin/text-02.tsv, /mnt/dataset_storage/cc12m_bin/text-03.tsv, /mnt/dataset_storage/cc12m_bin/text-04.tsv, /mnt/dataset_storage/cc12m_bin/text-05.tsv, /mnt/dataset_storage/cc12m_bin/text-06.tsv, /mnt/dataset_storage/cc12m_bin/text-07.tsv, /mnt/dataset_storage/cc12m_bin/text-08.tsv, /mnt/dataset_storage/cc12m_bin/text-09.tsv]
+    - name: output_dir
+      spec: discrete
+      values: [/mnt/output_storage/data/imagenet21k_process_lemma/]
+    - name: data_path
+      spec: discrete
+      values: [/mnt/dataset_storage/imagenet21k/text_chunk_00.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_01.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_02.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_03.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_04.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_05.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_06.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_07.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_08.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_09.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_10.tsv, /mnt/dataset_storage/imagenet21k/text_chunk_11.tsv ] #[/mnt/dataset_storage/train-openai/train-text-000.tsv, /mnt/dataset_storage/train-openai/train-text-001.tsv, /mnt/dataset_storage/train-openai/train-text-002.tsv, /mnt/dataset_storage/train-openai/train-text-003.tsv, /mnt/dataset_storage/train-openai/train-text-004.tsv, /mnt/dataset_storage/train-openai/train-text-005.tsv, /mnt/dataset_storage/train-openai/train-text-006.tsv, /mnt/dataset_storage/train-openai/train-text-007.tsv, /mnt/dataset_storage/train-openai/train-text-008.tsv, /mnt/dataset_storage/train-openai/train-text-009.tsv, /mnt/dataset_storage/train-openai/train-text-010.tsv, /mnt/dataset_storage/train-openai/train-text-011.tsv, /mnt/dataset_storage/train-openai/train-text-012.tsv]
+    # - name: output_dir
+    #   spec: discrete
+    #   values: [/mnt/output_storage/data/imagenet22k_process/]
+    # - name: data_path
+    #   spec: discrete
+    #   values: [/mnt/dataset_storage/imagenet22k/text_chunk_00.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_01.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_02.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_03.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_04.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_05.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_06.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_07.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_08.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_09.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_10.tsv, /mnt/dataset_storage/imagenet22k/text_chunk_11.tsv ] 
+    - name: start_idx
+      spec: discrete
+      values: [0] #[0, 250000, 500000, 750000] # [1000000] #[0, 500000, 1000000] #[0, 5, 10] # [0,1,2]
+    - name: process_lines
+      spec: discrete
+      values: [1500000] #[250000] #[500000] # [0,1,2]
+    
+      
+
+      
