@@ -2,7 +2,9 @@
 
 This is the official Pytorch implementation of KLITE:
 
-["**K-LITE: Learning Transferable Visual Models with External Knowledge. NeurIPS 2022 (oral)**"](https://arxiv.org/pdf/2204.09222.pdf0) by [Sheng Shen*](https://sincerass.github.io/), [Chunyuan Li*](https://chunyuan.li/), [Xiaowei Hu](https://scholar.google.com/citations?user=Pj0TwxwAAAAJ&hl=en), [Yujia Xie](https://scholar.google.com/citations?user=r2FiAE4AAAAJ&hl=en), [Jianwei Yang](https://jwyang.github.io/), [Xiaowei Hu](https://scholar.google.com/citations?user=Pj0TwxwAAAAJ&hl=en), [Pengchuan Zhang](https://pzzhang.github.io/pzzhang/), [Zhe Gan](https://zhegan27.github.io/), [Lijuan Wang](https://scholar.google.com/citations?user=cDcWXuIAAAAJ&hl=zh-CN), [Lu Yuan](https://scholar.google.com/citations?user=k9TsUVsAAAAJ&hl=en), [Ce Liu](http://people.csail.mit.edu/celiu/), [Kurt Keutzer](http://people.eecs.berkeley.edu/~keutzer/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/), [Anna Rohrbach](https://anna-rohrbach.net/) and [Jianfeng Gao](https://www.microsoft.com/en-us/research/people/jfgao/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fjfgao%2F).
+["**K-LITE: Learning Transferable Visual Models with External Knowledge. NeurIPS 2022 (oral)**"](https://arxiv.org/pdf/2204.09222.pdf0) by 
+
+[Sheng Shen*](https://sincerass.github.io/), [Chunyuan Li*](https://chunyuan.li/), [Xiaowei Hu](https://scholar.google.com/citations?user=Pj0TwxwAAAAJ&hl=en), [Yujia Xie](https://scholar.google.com/citations?user=r2FiAE4AAAAJ&hl=en), [Jianwei Yang](https://jwyang.github.io/), [Xiaowei Hu](https://scholar.google.com/citations?user=Pj0TwxwAAAAJ&hl=en), [Pengchuan Zhang](https://pzzhang.github.io/pzzhang/), [Zhe Gan](https://zhegan27.github.io/), [Lijuan Wang](https://scholar.google.com/citations?user=cDcWXuIAAAAJ&hl=zh-CN), [Lu Yuan](https://scholar.google.com/citations?user=k9TsUVsAAAAJ&hl=en), [Ce Liu](http://people.csail.mit.edu/celiu/), [Kurt Keutzer](http://people.eecs.berkeley.edu/~keutzer/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/), [Anna Rohrbach](https://anna-rohrbach.net/) and [Jianfeng Gao](https://www.microsoft.com/en-us/research/people/jfgao/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fjfgao%2F).
 
 ## Introduction
 
@@ -39,11 +41,11 @@ We provide two illustrative examples why **K-LITE** could be helpful from Oxford
 
 | Model | Training Set | ZS on IN-1K | ZS on 20 datasets| Download
 | :----: | :---: | :---: | :---: | :---: |
-| Swin-T | IN-21K | 30.5 | 33.5 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
-| Swin-T | IN-21K + GCC-15M | 49.9  | 41.1 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
-| Swin-T | IN-21K + GCC-15M + YFCC-14M | 49.6 | 40.3 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
-| Swin-B | IN-21K + GCC-15M | 52.7  | 42.8 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
-| Swin-B | IN-21K + GCC-15M + YFCC-14M | 55.7 | 42.4 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
+| Swin-T | IN-21K | 30.5 | 33.8 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
+| Swin-T | IN-21K + GCC-15M | 49.9  | 42.3 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
+| Swin-T | IN-21K + GCC-15M + YFCC-14M | 49.6 | 41.6 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
+| Swin-B | IN-21K + GCC-15M | 52.7  | 43.6 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
+| Swin-B | IN-21K + GCC-15M + YFCC-14M | 55.8 | 44.8 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
 
 **NOTE**: Setting "ZS on 20 datasets" is used in the ICinW benchmark. All the above models are trained **without** strong data augmentations like mixup and cutmix.
 

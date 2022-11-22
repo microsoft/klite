@@ -54,14 +54,16 @@ merge_encoder_and_proj=False
 # Please change the knowledge source accordingly.
 if [[ "$method" = "klite" ]]; then
     use_wiktionary_definition=True
+    use_gpt3=True
+    use_gpt3_count=5
 else
     use_wiktionary_definition=False
+    use_gpt3=False
+    use_gpt3_count=0
 fi
 
 use_wordnet_hierachy=False
 use_wordnet_definition=False
-use_gpt3=False
-use_gpt3_count=0
 
 ############ Configurations for adding knowledge end   ############
 
