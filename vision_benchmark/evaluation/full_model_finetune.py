@@ -179,7 +179,7 @@ def hyperparameter_sweep(train_dataloader, val_dataloader, config):
         if best_score_ > peak_score:
             peak_idx = idx
             peak_score = best_score_
-    logging.info(f"Iteration {iter_num}: l2_lambda: {l2_lambda_list[peak_idx]}, best score {best_score_}")
+    logging.info(f"Search Iteration {iter_num}: l2_lambda: {l2_lambda_list[peak_idx]}, best score {best_score_}")
 
     step_span = 8
     while step_span > 0:
@@ -190,11 +190,8 @@ def hyperparameter_sweep(train_dataloader, val_dataloader, config):
         if right != peak_idx:
             search_idx.append(right)
         for idx in search_idx:
-            # WD_SEARCH_LEFT is used in the inital release, whereas we later find WD_SEARCH_IDX to be more stable.
-            if config.TRAIN.WD_SEARCH_LEFT:
-                config.TRAIN.WD = l2_lambda_list[left]
-            else:
-                config.TRAIN.WD = l2_lambda_list[idx]
+            # config.TRAIN.WD = l2_lambda_list[left]
+            config.TRAIN.WD = l2_lambda_list[idx]
 
             try:
                 best_score_ = train_task(train_dataloader, val_dataloader, config, sweep_run=True)
@@ -207,7 +204,7 @@ def hyperparameter_sweep(train_dataloader, val_dataloader, config):
                 peak_idx = idx
                 peak_score = best_score_
         iter_num += 1
-        logging.info(f"Iteration {iter_num}: l2_lambda: {l2_lambda_list[peak_idx]}, best score {best_score_}")
+        logging.info(f"Search Iteration {iter_num}: l2_lambda: {l2_lambda_list[peak_idx]}, best score {best_score_}")
         step_span //= 2
 
     logging.info(f"=> Learning rate {config.TRAIN.LR}: The best l2 lambda is {l2_lambda_list[peak_idx]}")
@@ -232,6 +229,8 @@ def train_task(train_dataloader, test_dataloader, config, sweep_run=False):
     model = Classifier(config, 0)
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     logging.info(f'Number of trainable params: {pytorch_total_params / 1000000}M.')
+
+    # pdb.set_trace()
 
     train_dataloader = clone_loader(train_dataloader)
 
@@ -264,7 +263,8 @@ def train_task(train_dataloader, test_dataloader, config, sweep_run=False):
         adjust_learning_rate(optimizer, epoch, config)
 
         # train for one epoch
-        train_one(train_dataloader, model, criterion, optimizer, epoch, config)
+        if not config.TRAIN.EMULATE_ZERO_SHOT:
+            train_one(train_dataloader, model, criterion, optimizer, epoch, config)
 
         # evaluate on validation set
         acc1, logits = validate(test_dataloader, model, criterion, epoch, config, return_logits=True)

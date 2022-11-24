@@ -50,6 +50,19 @@ _C.MODEL.SPEC.TEXT.CONTEXT_LENGTH = 77
 
 _C.MODEL.STATS = CN(new_allowed=True)
 
+
+# common params for UNICL NETWORK
+_C.UNICL_MODEL = CN(new_allowed=True)
+_C.UNICL_MODEL.PRETRAINED = ''
+_C.LANG_ENCODER = CN(new_allowed=True)
+_C.IMAGE_ENCODER = CN(new_allowed=True)
+
+
+_C.KNOWLEDGE = CN(new_allowed=True)
+_C.KNOWLEDGE.WORDNET = CN(new_allowed=True)
+_C.KNOWLEDGE.WORDNET.USE_HIERARCHY = False
+_C.KNOWLEDGE.WORDNET.USE_DEFINITION = False
+
 _C.LOSS = CN()
 _C.LOSS.LABEL_SMOOTHING = 0.0
 _C.LOSS.LOSS = 'softmax'
@@ -124,6 +137,15 @@ _C.AUG.TIMM_AUG = CN(new_allowed=True)
 _C.AUG.TIMM_AUG.USE_LOADER = False
 _C.AUG.TIMM_AUG.USE_TRANSFORM = False
 
+_C.SWA = CN()
+_C.SWA.ENABLED = False
+_C.SWA.DEVICE = 'cpu'
+_C.SWA.BEGIN_EPOCH = -1
+_C.SWA.LR_RATIO = 0.5
+_C.SWA.ANNEAL_EPOCHS = 10
+_C.SWA.ANNEAL_STRATEGY = 'cos'
+_C.SWA.FROZEN_BN = False
+
 # train
 _C.TRAIN = CN()
 
@@ -151,7 +173,6 @@ _C.TRAIN.OPTIMIZER = 'sgd'
 _C.TRAIN.OPTIMIZER_ARGS = CN(new_allowed=True)
 _C.TRAIN.MOMENTUM = 0.9
 _C.TRAIN.WD = 0.0001
-_C.TRAIN.WD_SEARCH_LEFT = False # WD_SEARCH_LEFT is used in the inital release, whereas we later find WD_SEARCH_IDX to be more stable.
 _C.TRAIN.WITHOUT_WD_LIST = []
 _C.TRAIN.NESTEROV = True
 # for adam
@@ -162,13 +183,26 @@ _C.TRAIN.BEGIN_EPOCH = 0
 _C.TRAIN.END_EPOCH = 100
 _C.TRAIN.EXTRA_FINAL_TRAIN_EPOCH = 0
 
+_C.TRAIN.EMULATE_ZERO_SHOT = False
+
 _C.TRAIN.IMAGE_SIZE = [224, 224]  # width * height, ex: 192 * 256
 _C.TRAIN.BATCH_SIZE_PER_GPU = 32
 _C.TRAIN.SHUFFLE = True
 
+_C.TRAIN.EMA_DECAY = 0.0
 _C.TRAIN.EVAL_BEGIN_EPOCH = 0
 
+_C.TRAIN.LARC = False
+
+_C.TRAIN.DETECT_ANOMALY = False
+
 _C.TRAIN.CLIP_GRAD_NORM = 0.0
+
+_C.TRAIN.LOADER = 'blobfuse'  # available options: "blobfuse" and "azcopy"
+_C.TRAIN.SAMPLER = 'default'  # available options: 'default', 'class_aware', 'class_aware_target_size', 'chunk'
+_C.TRAIN.NUM_SAMPLES_CLASS = 'average'  # 'average', 'median' or any integer
+
+_C.TRAIN.SAVE_ALL_MODELS = False
 
 # testing
 _C.TEST = CN()

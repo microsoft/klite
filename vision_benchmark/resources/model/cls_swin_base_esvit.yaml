@@ -8,36 +8,21 @@ INPUT:
   - 0.224
   - 0.225
 MODEL:
-  NAME: clip_swin
-  NUM_PARAMS_IN_M: 11.0
-  AUTHOR: 'MSFT'
-  PRETRAINED_DATA: 'ImageNet21K_YFCC15M_GCC15M'
-  CREATION_TIME: '2021-10-27'
-  # Following configuration is needed for CLIP model.
-  PRETRAINED: ''
-  PRETRAINED_LAYERS: ['*']
+  NAME: cls_swin_esvit
   SPEC:
-    EMBED_DIM: 512
-    GATHER_TENSORS: True
-    TEXT:
-      TOKENIZER: clip
-      CONTEXT_LENGTH: 77
-      WIDTH: 512
-      HEADS: 8
-      LAYERS: 12
-    VISION:
-      PATCH_SIZE: 4
-      IN_CHANS: 3
-      EMBED_DIM: 128
-      DEPTHS: [2, 2, 18, 2]
-      NUM_HEADS: [4, 8, 16, 32]
-      WINDOW_SIZE: 7
-      MLP_RATIO: 4.
-      QKV_BIAS: True
-      APE: False
-      PATCH_NORM: True
-      DROP_RATE: 0.0
-      DROP_PATH_RATE: 0.2
+    PATCH_SIZE: 4
+    DIM_EMBED: 128
+    EMBED_DIM: 1024
+    DEPTHS: [ 2, 2, 18, 2 ]
+    NUM_HEADS: [ 4, 8, 16, 32 ]
+    WINDOW_SIZE: 14
+    MLP_RATIO: 4
+    QKV_BIAS: True
+    DROP_RATE: 0
+    ATTN_DROP_RATE: 0
+    DROP_PATH_RATE: 0.2
+    USE_APE: False
+    PATCH_NORM: True
 
 KNOWLEDGE:
   WORDNET:
@@ -47,10 +32,10 @@ KNOWLEDGE:
 # DATASET:
 #   DATASET: 'imagenet'
 #   ROOT: ../../data/zeroshot/classification/imagenet 
-OUTPUT_DIR: /home/chunyl/azure_mount/chunyleu_output/cvinwild/ic_benchmark/debug/swin_tiny/unicl_imagenet21k 
+OUTPUT_DIR: /home/chunyl/research/project/2022/outputs/eleveter_output/swin_base_esvit_w14
 # ../../output/hcl_exp/hcl_yfcc15m_half_imagenet22k_half/wordnet_h_true_d_false
 TEST:
-  MODEL_FILE: '/home/chunyl/azure_mount/chunyleu_output/ckpts/benchmark/swin_tiny/unicl_imagenet21k/model_state_dict.pt' 
+  MODEL_FILE: '/home/chunyl/research/project/2022/Elevater_Toolkit_IC/ckpt/ckpt_w14_loss_vr/checkpoint_best.pth' 
   BATCH_SIZE_PER_GPU: 128
 
 TRAIN:
@@ -58,6 +43,8 @@ TRAIN:
   BEGIN_EPOCH: 0
   END_EPOCH: 10
   EXTRA_FINAL_TRAIN_EPOCH: 40
+
+  
   OPTIMIZER: sgd
   WD: 0.
   MOMENTUM: 0.9

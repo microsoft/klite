@@ -23,18 +23,27 @@ def add_zero_shot_args(parser):
     parser.add_argument('--model', required=True, help='Clip model configure file name', type=str)
     parser.add_argument('--text_feature_only', help='consider text feature or not.', default=False, action='store_true')
     parser.add_argument('--save-predictions', help='save predictions logits for analysis.', default=True, action='store_true')
+    parser.add_argument('--unicl_model_class', help='new python class implementation of unicl model class', default=False, action='store_true')
     parser.add_argument('opts',
                         help="Modify config options using the command-line",
                         default=None,
                         nargs=argparse.REMAINDER)    
 
 def load_or_extract_features(args, cfg):
-    if cfg.MODEL.SPEC.TEXT.TOKENIZER == 'clip':
-        tokenizer = SimpleTokenizer()
-    elif 'hf_' in cfg.MODEL.SPEC.TEXT.TOKENIZER:
-        tokenizer = HFPTTokenizer(pt_name=cfg.MODEL.SPEC.TEXT.TOKENIZER[3:])
+    if hasattr(cfg, "UNICL_MODEL") and args.unicl_model_class:
+        if cfg.LANG_ENCODER.TOKENIZER == 'clip':
+            tokenizer = SimpleTokenizer()
+        elif 'hf_' in cfg.LANG_ENCODER.TOKENIZER:
+            tokenizer = HFPTTokenizer(pt_name=cfg.LANG_ENCODER.TOKENIZER[3:])
+        else:
+            tokenizer = None
     else:
-        tokenizer = None
+        if cfg.MODEL.SPEC.TEXT.TOKENIZER == 'clip':
+            tokenizer = SimpleTokenizer()
+        elif 'hf_' in cfg.MODEL.SPEC.TEXT.TOKENIZER:
+            tokenizer = HFPTTokenizer(pt_name=cfg.MODEL.SPEC.TEXT.TOKENIZER[3:])
+        else:
+            tokenizer = None
 
     # Load or extract image features.
     feature_file = os.path.join(cfg.DATASET.ROOT, 'zeroshot_features_' + cfg.MODEL.NAME.replace('/', '') + f'_wiki_{cfg.KNOWLEDGE.WIKITIONARY.USE_DEFINITION}' + f'_gpt3_{cfg.KNOWLEDGE.GPT3.USE_GPT3}' + '.npy')
@@ -53,12 +62,20 @@ def load_or_extract_features(args, cfg):
     return image_features, text_features, image_labels
 
 def load_or_extract_text_features(args, cfg):
-    if cfg.MODEL.SPEC.TEXT.TOKENIZER == 'clip':
-        tokenizer = SimpleTokenizer()
-    elif 'hf_' in cfg.MODEL.SPEC.TEXT.TOKENIZER:
-        tokenizer = HFPTTokenizer(pt_name=cfg.MODEL.SPEC.TEXT.TOKENIZER[3:])
+    if hasattr(cfg, "UNICL_MODEL"):
+        if cfg.LANG_ENCODER.TOKENIZER == 'clip':
+            tokenizer = SimpleTokenizer()
+        elif 'hf_' in cfg.LANG_ENCODER.TOKENIZER:
+            tokenizer = HFPTTokenizer(pt_name=cfg.LANG_ENCODER.TOKENIZER[3:])
+        else:
+            tokenizer = None
     else:
-        tokenizer = None
+        if cfg.MODEL.SPEC.TEXT.TOKENIZER == 'clip':
+            tokenizer = SimpleTokenizer()
+        elif 'hf_' in cfg.MODEL.SPEC.TEXT.TOKENIZER:
+            tokenizer = HFPTTokenizer(pt_name=cfg.MODEL.SPEC.TEXT.TOKENIZER[3:])
+        else:
+            tokenizer = None
 
     # Load or extract image features.
     feature_file = os.path.join(cfg.DATASET.ROOT, 'zeroshot_text_features_' + cfg.MODEL.NAME.replace('/', '') + f'_wiki_{cfg.KNOWLEDGE.WIKITIONARY.USE_DEFINITION}' + f'_gpt3_{cfg.KNOWLEDGE.GPT3.USE_GPT3}' + '.npy')
@@ -101,7 +118,7 @@ def main():
         result, test_predictions, metric = clip_zeroshot_evaluator(image_features, text_features, image_labels, config)
         msg = f'=> TEST: {metric} {100 * result:.3f}% '
         logging.info(msg)
-
+        
         from pathlib import Path
         root_output_dir = Path(config.OUTPUT_DIR)
         dataset = config.DATASET.DATASET
@@ -113,7 +130,6 @@ def main():
         import json
 
         # a hack to control the json dump float accuracy
-        # if you find the accuracy is not enough, pleae consider increasing `prec`.
         def json_prec_dump(data, prec=6):
             return json.dumps(json.loads(json.dumps(data), parse_float=lambda x: round(float(x), prec)))
 

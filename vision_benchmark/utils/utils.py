@@ -11,6 +11,29 @@ import time
 from .comm import comm
 
 
+import torch
+import torch.distributed as dist
+
+NORM_MODULES = [
+    torch.nn.BatchNorm1d,
+    torch.nn.BatchNorm2d,
+    torch.nn.BatchNorm3d,
+    torch.nn.SyncBatchNorm,
+    # NaiveSyncBatchNorm inherits from BatchNorm2d
+    torch.nn.GroupNorm,
+    torch.nn.InstanceNorm1d,
+    torch.nn.InstanceNorm2d,
+    torch.nn.InstanceNorm3d,
+    torch.nn.LayerNorm,
+    torch.nn.LocalResponseNorm,
+]    
+
+def register_norm_module(cls):
+    NORM_MODULES.append(cls)
+
+    return cls
+
+
 def setup_logger(final_output_dir, rank, phase):
     time_str = time.strftime('%Y-%m-%d-%H-%M')
     log_file = f'{phase}_{time_str}_rank{rank}.txt'
@@ -44,4 +67,6 @@ def create_logger(cfg, phase='train'):
     setup_logger(final_output_dir, cfg.RANK, phase)
 
     return str(final_output_dir)
+
+
 

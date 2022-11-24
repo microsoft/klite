@@ -117,10 +117,10 @@ class KLITEModel(nn.Module):
     def dtype(self):
         return self.logit_scale.dtype
 
-    def get_imnet_embeddings(self, use_wikitionary_definiton=False):
+    def get_imnet_embeddings(self, use_knowledge=False):
         import json
         from nltk.tokenize import word_tokenize
-        if use_wikitionary_definiton:
+        if use_knowledge:
             wiki_path = 'vision_benchmark/resources/knowledge/external/'
             wiki_tsv_path = os.path.join(wiki_path,  'imagenet-1k_knowledge.tsv') 
             wiki_anwser_list = json.load(open(wiki_tsv_path, encoding='utf-8'))
@@ -132,16 +132,28 @@ class KLITEModel(nn.Module):
                 if k2v['def_wiki']:
                     count_has_wiki_knowledge += 1
             logger.info(f'coverage is {count_has_wiki_knowledge} / {len(wiki_dict)}')
-            wiki_count = 0
+
+            gpt3_tsv_path = os.path.join('vision_benchmark/resources/knowledge/gpt3/', 'GPT3_imagenet-1k.tsv') 
+            gpt3_anwser_list = json.load(open(gpt3_tsv_path, encoding='utf-8'))
+
+            gpt3_dict = {}
+            for k2v in gpt3_anwser_list:
+                gpt3_dict[ k2v['classname'] ] = k2v['gpt3']
+            NUM_GPT3_ITEMS = 5
+            wiki_count, gpt3_count = 0, 0
 
         templates = IMAGENET_DEFAULT_TEMPLATES
         clss_embeddings = []
         for clss in IMAGENET_CLASSES:
             knowledge_text_list = []
-            if use_wikitionary_definiton:
+            if use_knowledge:
                 if clss in wiki_dict:
                     knowledge_text_list.append(wiki_dict[clss])
                     wiki_count += 1
+                if clss in gpt3_dict:
+                    for knowledge_text in gpt3_dict[clss][:NUM_GPT3_ITEMS]:
+                        knowledge_text_list.append(knowledge_text)
+                        gpt3_count += 1 
 
             knowledge_text_list_aug = []
             for knowledge_text in knowledge_text_list:
@@ -166,6 +178,7 @@ class KLITEModel(nn.Module):
             clss_embedding /= clss_embedding.norm()
             clss_embeddings.append(clss_embedding)
         imnet_text_embeddings = torch.stack(clss_embeddings, dim=0)
+        if use_knowledge: logger.info(f'=> Knowledge source count | knowledge_count: {wiki_count} | gpt3_count {gpt3_count} ')
         return imnet_text_embeddings
 
     def encode_image(self, image, norm=True):

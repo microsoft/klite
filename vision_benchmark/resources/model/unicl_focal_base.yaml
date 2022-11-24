@@ -8,36 +8,56 @@ INPUT:
   - 0.224
   - 0.225
 MODEL:
-  NAME: clip_swin
-  NUM_PARAMS_IN_M: 11.0
-  AUTHOR: 'MSFT'
-  PRETRAINED_DATA: 'ImageNet21K_YFCC15M_GCC15M'
-  CREATION_TIME: '2021-10-27'
-  # Following configuration is needed for CLIP model.
+  NAME: unicl_model
+
+UNICL_MODEL:
+  DIM_PROJECTION: 512
+  GATHER_TENSORS: true
+  LOAD_PRETRAINED: true
   PRETRAINED: ''
-  PRETRAINED_LAYERS: ['*']
+  PRETRAINED_LAYERS: '*'  
+
+IMAGE_ENCODER:  
+  NAME: focal
+  NUM_CLASSES: 0
+  IMAGE_SIZE: [224, 224]
+  LOAD_PRETRAINED: true
+  PRETRAINED: ''
+  PRETRAINED_LAYERS: ['*']  
+  IMAGE_MEAN: [0.485, 0.456, 0.406]
+  IMAGE_STD: [0.229, 0.224, 0.225]
   SPEC:
-    EMBED_DIM: 512
-    GATHER_TENSORS: True
-    TEXT:
-      TOKENIZER: clip
-      CONTEXT_LENGTH: 77
-      WIDTH: 512
-      HEADS: 8
-      LAYERS: 12
-    VISION:
-      PATCH_SIZE: 4
-      IN_CHANS: 3
-      EMBED_DIM: 128
-      DEPTHS: [2, 2, 18, 2]
-      NUM_HEADS: [4, 8, 16, 32]
-      WINDOW_SIZE: 7
-      MLP_RATIO: 4.
-      QKV_BIAS: True
-      APE: False
-      PATCH_NORM: True
-      DROP_RATE: 0.0
-      DROP_PATH_RATE: 0.2
+    DROP_RATE: 0.0
+    DROP_PATH_RATE: 0.1  
+    PATCH_SIZE: 4
+    IN_CHANS: 3
+    EMBED_DIM: 128
+    DEPTHS: [2, 2, 18, 2]
+    MLP_RATIO: 4.
+    QKV_BIAS: True
+    PATCH_NORM: True
+    FOCAL_LEVELS: [3, 3, 3, 3]
+    FOCAL_FACTORS: [2, 2, 2, 2]
+    FOCAL_STRIDES: [1, 1, 1, 1]
+    FOCAL_WINDOWS: [3, 3, 3, 3]
+    FOCAL_POOL: 'conv'
+    USE_CONV_EMBED: True
+    USE_POSTLN: True
+    LAYER_SCALE: True 
+    LAYER_SCALE_VALUE: 0.000001    
+
+LANG_ENCODER:
+  NAME: transformer
+  LOAD_PRETRAINED: true
+  PRETRAINED: ''
+  PRETRAINED_LAYERS: '*'
+  TOKENIZER: clip
+  CONTEXT_LENGTH: 77
+  WIDTH: 512
+  HEADS: 8
+  LAYERS: 12
+  AUTOGRESSIVE: false
+
 
 KNOWLEDGE:
   WORDNET:

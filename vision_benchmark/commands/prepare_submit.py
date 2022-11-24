@@ -19,7 +19,6 @@ def parse_args():
     return args
 
 
-# if you find the accuracy is not enough, pleae consider increasing `prec`.
 def json_prec_dump(data, prec=6):
     return json.dumps(json.loads(json.dumps(data), parse_float=lambda x: round(float(x), prec)))
 

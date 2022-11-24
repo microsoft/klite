@@ -98,7 +98,7 @@ def create_dataloader(dataset, batch_size, shuffle=True, num_workers=6, pin_memo
     return loader
 
 
-def get_dataloader(dataset, val_split=0.0, batch_size_per_gpu=64, workers=6, pin_memory=True):
+def get_dataloader(dataset, val_split=0.0, batch_size_per_gpu=32, workers=6, pin_memory=True):
     if val_split == 0:
         return create_dataloader(
             dataset,
@@ -201,6 +201,8 @@ def load_custom_ic_model(config):
     ext = model_file.split('.')[-1]
     if ext == 'pth':
         state_dict = torch.load(model_file, map_location="cpu")
+        if 'teacher' in state_dict:
+            state_dict = state_dict['teacher']
     elif ext == 'pkl':
         logging.info('=> load pkl model')
         with open(model_file, 'rb') as f:
@@ -210,7 +212,10 @@ def load_custom_ic_model(config):
             state_dict[k] = torch.from_numpy(v)
     else:
         raise ValueError(f'=> Unknown model file, with ext {ext}')
-    model.load_state_dict(state_dict)
+    msg = model.load_state_dict(state_dict, strict=False)
+    print(f'loading checkpoint msg: {msg}')
+
+    # pdb.set_trace()
     return model
 
 
@@ -224,6 +229,7 @@ def load_custom_zeroshot_model(config):
     ext = model_file.split('.')[-1]
     if ext == 'pth' or ext == 'pt':
         state_dict = torch.load(model_file, map_location="cpu")
+
     elif ext == 'pkl':
         logging.info('=> load pkl model')
         with open(model_file, 'rb') as f:
@@ -259,30 +265,10 @@ def get_model(config, feature_type='image'):
     elif model_name.startswith('mae_'):
         model = mae.get_model(config)
         model.forward = model.forward_features
-    elif model_name.startswith('declip_') or model_name.startswith('slip_') or model_name.startswith('clip_yfcc_'):
-        model = declip.get_model(config)
-        if feature_type == 'image':
-            model.forward = model.encode_image
-        elif feature_type == 'text':
-            model.forward = model.encode_text
-        else:
-            raise Exception('Incorrect model type.')
-        if not config.MODEL.CLIP_FP32:
-            model.half()
-    elif model_name.startswith('filip_') or model_name.startswith('defilip_'):
-        model = declip.get_model(config)
-        if feature_type == 'image':
-            model.forward = model.encode_image_dense
-        elif feature_type == 'text':
-            model.forward = model.encode_text_dense
-        else:
-            raise Exception('Incorrect model type.')
-        if not config.MODEL.CLIP_FP32:
-            model.half()
     elif model_name.startswith('mocov3_'):
         model = mocov3.get_model(config)
         model.forward = model.forward_features
-    elif model_name.startswith('clip_'):
+    elif model_name.startswith('clip_') or model_name.startswith('unicl_'):
         model = load_custom_zeroshot_model(config)
 
         if config.LOSS.LOSS == 'softmax':
@@ -323,7 +309,11 @@ def extract_feature(model, data_loader, config):
     model.eval()
 
     # Generate model statistics
-    visual_backbone = model.visual if hasattr(model, 'visual') else model
+    if hasattr(config, "UNICL_MODEL") and hasattr(model, "image_encoder"): # args.unicl_model_class:
+        visual_backbone = model.image_encoder if model.image_encoder is not None else model
+    else:
+        visual_backbone = model.visual if model.visual is not None else model
+
     model_info = config.MODEL.STATS
     config.defrost()
     model_info['n_visual_params'] = sum(p.numel() for p in visual_backbone.parameters())
@@ -510,13 +500,9 @@ def extract_text_features(config, tokenizer, args=None, model=None, return_numpy
         else:
             texts = [template.format(classname) + knowledge_text for knowledge_text in knowledge_text_list_aug for template in templates ]
 
-        if not config.MODEL.SPEC.TEXT.get('SKIP_TOKENIZE', False):
-            texts = tokenizer(texts, context_length=config.MODEL.SPEC.TEXT.CONTEXT_LENGTH).to(device)
+        texts = tokenizer(texts, context_length=config.MODEL.SPEC.TEXT.CONTEXT_LENGTH).to(device)
 
-        if config.MODEL.SPEC.get('DENSE_EVAL', False):
-            class_embeddings = model.encode_text_dense(texts)
-        else:
-            class_embeddings = model.encode_text(texts)
+        class_embeddings = model.encode_text(texts)
         class_embeddings /= class_embeddings.norm(dim=-1, keepdim=True)
         class_embedding = class_embeddings.mean(dim=0)
         class_embedding /= class_embedding.norm()
