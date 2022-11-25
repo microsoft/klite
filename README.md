@@ -41,11 +41,11 @@ We provide two illustrative examples why **K-LITE** could be helpful from Oxford
 
 | Model | Training Set | ZS on IN-1K | ZS on 20 datasets| Download
 | :----: | :---: | :---: | :---: | :---: |
-| Swin-T | IN-21K | 30.5 / 32.0 | 33.8 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
-| Swin-T | IN-21K + GCC-15M | 49.9 / 51.6  | 42.3 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
-| Swin-T | IN-21K + GCC-15M + YFCC-14M | 49.6 / 51.9 | 41.6 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
-| Swin-B | IN-21K + GCC-15M | 52.7 / 55.0  | 43.6 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
-| Swin-B | IN-21K + GCC-15M + YFCC-14M | 55.8 / 58.0 | 44.8 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
+| Swin-T | IN-21K |  32.0 | 33.8 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
+| Swin-T | IN-21K + GCC-15M |  51.6  | 42.3 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
+| Swin-T | IN-21K + GCC-15M + YFCC-14M |  51.9 | 41.6 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/tiny/model_state_dict.pt)/[config](configs/klite_swin_tiny.yaml)
+| Swin-B | IN-21K + GCC-15M |  55.0  | 43.6 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
+| Swin-B | IN-21K + GCC-15M + YFCC-14M |  58.0 | 44.8 | [ckpt](https://cvinw.blob.core.windows.net/model/klite/in21k_gcc15m_yfcc14m/base/model_state_dict.pt)/[config](configs/klite_swin_base.yaml)
 
 **NOTE**: Setting "ZS on 20 datasets" is used in the ICinW benchmark. All the above models are trained **without** strong data augmentations like mixup and cutmix.
 
