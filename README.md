@@ -130,7 +130,7 @@ If you find this repo useful to your project, please consider to cite it with fo
 ```
 ## Acknowledgement
 
-Our codebase is built based on [UniCL](https://github.com/microsoft/UniCL).
+Our codebase is built based on [UniCL](https://github.com/microsoft/UniCL) and [ELEVATER](https://github.com/Computer-Vision-in-the-Wild/Elevater_Toolkit_IC).
 
 ## Contributing
 
