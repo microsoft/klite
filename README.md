@@ -8,7 +8,7 @@ This is the official Pytorch implementation of KLITE:
 
 ## Update
 
-- Jan 17 2023. [**REACT**](https://react-vl.github.io/) extends KLITE from text knowledge from a dictionary to **retrieved multimodal knoweldge from the web**.
+- Jan 17 2023. [**REACT**](https://react-vl.github.io/) extends KLITE from *text knowledge from a dictionary* to ***retrieved multimodal knoweldge from the web***.
 
 ## Introduction
 
