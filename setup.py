@@ -22,7 +22,7 @@ setuptools.setup(name='vision_benchmark',
                      'vision-datasets>=0.2.0',
                      'vision-evaluation>=0.2.2',
                      'tqdm~=4.62.3',
-                     'transformers~=4.11.3'
+                     'transformers>=4.11.3,<4.31.0'
                  ],
                  entry_points={
                      'console_scripts': [
